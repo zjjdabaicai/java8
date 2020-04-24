@@ -71,5 +71,11 @@ Stream 的三个操作步骤：
             count——返回流中元素的中个数
             max——返回流中最大值
             min——返回流中最小值
+            
+          归约
+            reduce(T identity, BinaryOperator) / reduce(BinaryOperator) ——可以将流中元素反复结合起来，得到一个值
+
+          收集
+            collect——将流转换为其他形式。接收一个Collector 接口的实现，用于给Stream 中元素汇总的方法
 
 
