@@ -1,4 +1,4 @@
-package com.zjj.java8;
+package com.zjj.Lambda;
 
 import org.junit.Test;
 
