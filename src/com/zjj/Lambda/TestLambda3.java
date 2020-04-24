@@ -68,8 +68,6 @@ public class TestLambda3 {
     }
 
 
-
-
     //Supplier<T> : 供给型接口
     @Test
     public void test2() {

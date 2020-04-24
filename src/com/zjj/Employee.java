@@ -39,6 +39,14 @@ public class Employee {
         this.status = status;
     }
 
+    public Employee(Integer id, Integer age, String name, Double salary, Status status) {
+        this.id = id;
+        this.age = age;
+        this.name = name;
+        this.salary = salary;
+        this.status = status;
+    }
+
     public Integer getId() {
         return id;
     }
