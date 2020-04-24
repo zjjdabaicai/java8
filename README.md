@@ -3,22 +3,22 @@
 
 Java8 内置的四大核心函数式接口
  
-  Consumer<T> : 消费型接口
-       void accept(T t);
- 
-  Supplier<T> : 供给型接口
-       T get();
- 
-  Function<T,R> : 函数型接口
-       R apply(T t);
- 
-  Predicate<T> : 断言型接口
-       boolean test(T t);
+    Consumer<T> : 消费型接口
+         void accept(T t);
+
+    Supplier<T> : 供给型接口
+         T get();
+
+    Function<T,R> : 函数型接口
+         R apply(T t);
+
+    Predicate<T> : 断言型接口
+         boolean test(T t);
        
        
        
 
-    一、方法引用：若 Lambda 体重的内容有方法已经实现了，我们可以使用“方法引用”
+   一、方法引用：若 Lambda 体重的内容有方法已经实现了，我们可以使用“方法引用”
            （可以理解为方法引用是 Lambda 表达式的另外一种表现形式）
 
     主要有三种语法格式：
@@ -43,6 +43,7 @@ Java8 内置的四大核心函数式接口
         
 
 Stream 的三个操作步骤：
+
         1. 创建 Stream
 
         2. 中间操作：不会执行任何操作
