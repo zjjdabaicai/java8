@@ -143,6 +143,14 @@ public class TestStreamAPI2 {
 
         System.out.println("-----------------");
 
+        employees.stream()
+                .sorted((e1, e2) -> {
+                    if (e1.getAge().equals(e2.getAge())) {
+                        return e1.getName().compareTo(e2.getName());
+                    } else {
+                        return -e1.getAge().compareTo(e2.getAge());
+                    }
+                }).forEach(System.out::println);
 
     }
 

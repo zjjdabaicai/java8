@@ -1,39 +1,50 @@
 package com.zjj;
 
 public class Employee {
-    private int id;
+
+    private Integer id;
+    private Integer age;
     private String name;
-    private int age;
-    private double salary;
+    private Double salary;
+    private Status status;
 
     public Employee() {
     }
 
-    public Employee(int id) {
+    public Employee(Integer id) {
         this.id = id;
     }
 
-    public Employee(int id, int age) {
+    public Employee(Integer id, Integer age) {
         this.id = id;
         this.age = age;
     }
 
-    public Employee(int id, String name, int age, double salary) {
+    public Employee(Integer id, Integer age, String name) {
         this.id = id;
+        this.age = age;
+        this.name = name;
+    }
+
+    public Employee(String name, Integer age, Double salary) {
         this.name = name;
         this.age = age;
         this.salary = salary;
     }
 
-    public Employee(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    public Employee(String name, int age, double salary) {
+    public Employee(String name, Integer age, Double salary, Status status) {
         this.name = name;
         this.age = age;
         this.salary = salary;
+        this.status = status;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -44,37 +55,38 @@ public class Employee {
         this.name = name;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public double getSalary() {
+    public Double getSalary() {
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public void setSalary(Double salary) {
         this.salary = salary;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     @Override
     public String toString() {
         return "Employee{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
                 ", age=" + age +
+                ", name='" + name + '\'' +
                 ", salary=" + salary +
+                ", status=" + status +
                 '}';
     }
 
@@ -85,21 +97,27 @@ public class Employee {
 
         Employee employee = (Employee) o;
 
-        if (id != employee.id) return false;
-        if (age != employee.age) return false;
-        if (Double.compare(employee.salary, salary) != 0) return false;
-        return name != null ? name.equals(employee.name) : employee.name == null;
+        if (id != null ? !id.equals(employee.id) : employee.id != null) return false;
+        if (age != null ? !age.equals(employee.age) : employee.age != null) return false;
+        if (name != null ? !name.equals(employee.name) : employee.name != null) return false;
+        if (salary != null ? !salary.equals(employee.salary) : employee.salary != null) return false;
+        return status == employee.status;
     }
 
     @Override
     public int hashCode() {
-        int result;
-        long temp;
-        result = id;
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (age != null ? age.hashCode() : 0);
         result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + age;
-        temp = Double.doubleToLongBits(salary);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + (salary != null ? salary.hashCode() : 0);
+        result = 31 * result + (status != null ? status.hashCode() : 0);
         return result;
     }
+
+    public enum Status {
+        FREE,
+        BUSY,
+        VOCATION;
+    }
+
 }
