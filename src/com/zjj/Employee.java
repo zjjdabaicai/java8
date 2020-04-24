@@ -3,8 +3,8 @@ package com.zjj;
 public class Employee {
 
     private Integer id;
-    private Integer age;
     private String name;
+    private Integer age;
     private Double salary;
     private Status status;
 
@@ -39,10 +39,10 @@ public class Employee {
         this.status = status;
     }
 
-    public Employee(Integer id, Integer age, String name, Double salary, Status status) {
+    public Employee(Integer id, String name, Integer age, Double salary, Status status) {
         this.id = id;
-        this.age = age;
         this.name = name;
+        this.age = age;
         this.salary = salary;
         this.status = status;
     }
